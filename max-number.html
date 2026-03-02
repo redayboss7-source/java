@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = parseFloat(prompt("Enter first number:"));
+        let num2 = parseFloat(prompt("Enter second number:"));
+        let num3 = parseFloat(prompt("Enter third number:"));
+
+        let max;
+        if (num1 >= num2 && num1 >=num3) {
+            max = num1;
+        }
+        else if (num2 >= num1 && num2 >=num3) {
+            max = num2;
+        }
+        else {
+            max = num3;
+        }
+        document.write(`the maximum number is ${max}`)
+    </script>
+</body>
+</html>
