@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Admission</title>
+</head>
+
+<body style="background:#d0f0f5; font-family:Arial;">
+
+<form name="f" style="width:220px;margin:auto;border:1px solid #333;padding:10px;background:#fff">
+
+Name <br>
+<input type="text" name="txtName"><br><br>
+
+Email <br>
+<input type="text" name="myEmail"><br><br>
+
+Address <br>
+<textarea name="txtAddress"></textarea><br><br>
+
+Course <br>
+<select name="txtCourse">
+<option>MBA</option>
+<option>BBA</option>
+<option>CIS</option>
+<option>EEE</option>
+</select><br><br>
+
+Sex <br>
+Male <input type="radio" name="rdoSex" value="Male">
+Female <input type="radio" name="rdoSex" value="Female"><br><br>
+
+Subject <br>
+<input type="checkbox" name="chkSubject" value="English">English
+<input type="checkbox" name="chkSubject" value="Math">Math
+<input type="checkbox" name="chkSubject" value="Bengali">Bengali<br><br>
+
+<input type="button" value="Submit" onclick="showData()" style="background:green;color:white">
+<input type="Reset" value="Reset"  style="background:green;color:white">
+
+</form>
+
+<script>
+
+function showData(){
+
+var name=f.txtName.value;
+var email=f.myEmail.value;
+var address=f.txtAddress.value;
+var course=f.txtCourse.value;
+
+var w=open("","","width=250,height=250");
+
+w.document.write("<body style='background:#ffe4b5'>");
+w.document.write("Name: "+name+"<br>");
+w.document.write("Email: "+email+"<br>");
+w.document.write("Address: "+address+"<br>");
+w.document.write("Course: "+course+"<br><br>");
+w.document.write("<button onclick='print()'>Print</button>");
+w.document.write("<button onclick='close()'>Close me</button>");
+
+}
+
+</script>
+
+</body>
+</html>
