@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Admission</title>
+</head>
+
+<body>
+
+<form name="f">
+
+Name <br>
+<input type="text" name="txtName"><br><br>
+
+Email <br>
+<input type="text" name="myEmail"><br><br>
+
+Address <br>
+<textarea name="txtAddress"></textarea><br><br>
+
+Course <br>
+<select name="txtCourse">
+<option>MBA</option>
+<option>BBA</option>
+<option>CIS</option>
+<option>EEE</option>
+</select><br><br>
+
+Sex <br>
+Male <input type="radio" name="rdoSex">
+Female <input type="radio" name="rdoSex"><br><br>
+
+Subject <br>
+<input type="checkbox" name="chk1">English
+<input type="checkbox" name="chk2">Math
+<input type="checkbox" name="chk3">Bengali<br><br>
+
+<input type="button" value="Submit" onclick="validate()">
+<input type="reset" value="Reset">
+
+</form>
+
+<script>
+
+function validate(){
+
+if(f.txtName.value==""){
+alert("Enter Name");
+return;
+}
+
+else if(f.txtName.value.length > 5){
+alert("Name maximum 5 characters");
+return;
+}
+var email=f.myEmail.value;
+
+if(email==""){
+alert("Enter Email");
+return;
+}
+
+if(email.indexOf("@")==-1 || email.indexOf(".")==-1){
+alert("Enter Valid Email");
+return;
+}
+
+if(f.txtAddress.value==""){
+alert("Enter Address");
+return;
+}
+
+if(!f.rdoSex[0].checked && !f.rdoSex[1].checked){
+alert("Select Sex");
+return;
+}
+
+if(!f.chk1.checked && !f.chk2.checked && !f.chk3.checked){
+alert("Select Subject");
+return;
+}
+
+showData();
+
+}
+
+function showData(){
+
+var name=f.txtName.value;
+var email=f.myEmail.value;
+var address=f.txtAddress.value;
+var course=f.txtCourse.value;
+
+var w=open("","","width=250,height=250");
+
+w.document.write("<body>");
+w.document.write("Name: "+name+"<br>");
+w.document.write("Email: "+email+"<br>");
+w.document.write("Address: "+address+"<br>");
+w.document.write("Course: "+course+"<br><br>");
+w.document.write("<button onclick='print()'>Print</button>");
+w.document.write("<button onclick='close()'>Close</button>");
+
+}
+
+</script>
+
+</body>
+</html>

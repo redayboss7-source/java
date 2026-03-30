@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Admission Form</title>
+</head>
+
+<body>
+
+<h2>Student Admission Form</h2>
+
+<form name="f">
+
+Name <br>
+<input type="text" name="txtName"><br><br>
+
+Email <br>
+<input type="email" name="myEmail"><br><br>
+
+Address <br>
+<textarea name="txtAddress"></textarea><br><br>
+
+Course <br>
+<select name="txtCourse">
+<option>MBA</option>
+<option>BBA</option>
+<option>CIS</option>
+<option>EEE</option>
+</select><br><br>
+
+Sex <br>
+Male <input type="radio" name="rdoSex" value="Male">
+Female <input type="radio" name="rdoSex" value="Female"><br><br>
+
+Subject <br>
+<input type="checkbox" name="chk1" value="English">English
+<input type="checkbox" name="chk2" value="Math">Math
+<input type="checkbox" name="chk3" value="Bengali">Bengali<br><br>
+
+<input type="button" value="Submit" onclick="validate()">
+<input type="reset" value="Reset">
+
+</form>
+
+<script>
+
+function validate(){
+
+if(f.txtName.value==""){
+alert("Enter Name");
+return;
+}
+
+if(f.myEmail.value==""){
+alert("Enter Email");
+return;
+}
+
+if(f.txtAddress.value==""){
+alert("Enter Address");
+return;
+}
+
+if(!f.rdoSex[0].checked && !f.rdoSex[1].checked){
+alert("Select Sex");
+return;
+}
+
+if(!f.chk1.checked && !f.chk2.checked && !f.chk3.checked){
+alert("Select at least one Subject");
+return;
+}
+
+showData();
+
+}
+
+function showData(){
+
+var name=f.txtName.value;
+var email=f.myEmail.value;
+var address=f.txtAddress.value;
+var course=f.txtCourse.value;
+
+var sex="";
+if(f.rdoSex[0].checked) sex="Male";
+if(f.rdoSex[1].checked) sex="Female";
+
+var subject="";
+if(f.chk1.checked) subject+="English ";
+if(f.chk2.checked) subject+="Math ";
+if(f.chk3.checked) subject+="Bengali ";
+
+var w=open("","","width=300,height=300");
+
+w.document.write("<h3>Student Information</h3>");
+w.document.write("Name: "+name+"<br>");
+w.document.write("Email: "+email+"<br>");
+w.document.write("Address: "+address+"<br>");
+w.document.write("Course: "+course+"<br>");
+w.document.write("Sex: "+sex+"<br>");
+w.document.write("Subject: "+subject+"<br><br>");
+
+w.document.write("<button onclick='print()'>Print</button>");
+w.document.write("<button onclick='close()'>Close</button>");
+
+}
+
+</script>
+
+</body>
+</html>
